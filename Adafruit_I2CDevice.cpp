@@ -235,8 +235,8 @@ bool Adafruit_I2CDevice::_read(uint8_t *buffer, size_t len, bool stop) {
 
 /*!
  *    @brief  Write some data, then read some data from I2C into another buffer.
- *    Written buffer cannot be more than maxBufferSize() bytes. The buffers can point to
- *    same/overlapping locations.
+ *    Written buffer cannot be more than maxBufferSize() bytes. The buffers 
+ *    can point to same/overlapping locations.
  *    @param  write_buffer Pointer to buffer of data to write from
  *    @param  write_len Number of bytes from buffer to write.
  *    @param  read_buffer Pointer to buffer of data to read into.
