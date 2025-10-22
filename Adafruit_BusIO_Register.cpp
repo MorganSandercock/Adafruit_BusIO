@@ -111,8 +111,8 @@ Adafruit_BusIO_Register::Adafruit_BusIO_Register(
 /*!
  *    @brief  Write a buffer of data to the register location
  *    @param  buffer Pointer to data to write
- *    @param  len Number of bytes to write (don't exceed maxbuffersize() 
- * which may be as small as 32 bytes)
+ *    @param  len Number of bytes to write - don't exceed maxbuffersize()
+ * which may be as small as 32 bytes
  *    @return True on successful write (only really useful for I2C as SPI is
  * uncheckable)
  */
