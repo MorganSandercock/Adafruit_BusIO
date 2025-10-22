@@ -111,11 +111,11 @@ Adafruit_BusIO_Register::Adafruit_BusIO_Register(
 /*!
  *    @brief  Write a buffer of data to the register location
  *    @param  buffer Pointer to data to write
- *    @param  len Number of bytes to write
+ *    @param  len Number of bytes to write (don't exceed maxbuffersize() which may be as small as 32 bytes)
  *    @return True on successful write (only really useful for I2C as SPI is
  * uncheckable)
  */
-bool Adafruit_BusIO_Register::write(uint8_t *buffer, uint8_t len) {
+bool Adafruit_BusIO_Register::write(uint8_t *buffer, size_t len) {
   uint8_t addrbuffer[2] = {(uint8_t)(_address & 0xFF),
                            (uint8_t)(_address >> 8)};
   if (_i2cdevice) {
@@ -216,7 +216,7 @@ uint32_t Adafruit_BusIO_Register::readCached(void) { return _cached; }
    @param len Number of bytes to read into the buffer
    @return true on successful read, otherwise false
 */
-bool Adafruit_BusIO_Register::read(uint8_t *buffer, uint8_t len) {
+bool Adafruit_BusIO_Register::read(uint8_t *buffer, size_t len) {
   uint8_t addrbuffer[2] = {(uint8_t)(_address & 0xFF),
                            (uint8_t)(_address >> 8)};
   if (_i2cdevice) {

@@ -63,12 +63,12 @@ public:
                           uint8_t byteorder = LSBFIRST,
                           uint8_t address_width = 1);
 
-  bool read(uint8_t *buffer, uint8_t len);
+  bool read(uint8_t *buffer, size_t len);
   bool read(uint8_t *value);
   bool read(uint16_t *value);
   uint32_t read(void);
   uint32_t readCached(void);
-  bool write(uint8_t *buffer, uint8_t len);
+  bool write(uint8_t *buffer, size_t len);
   bool write(uint32_t value, uint8_t numbytes = 0);
 
   uint8_t width(void);
