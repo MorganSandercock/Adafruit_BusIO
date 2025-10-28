@@ -15,7 +15,7 @@ Adafruit_I2CDevice::Adafruit_I2CDevice(uint8_t addr, TwoWire *theWire) {
   _maxBufferSize = 250; // as defined in Wire.h's RingBuffer
 #elif defined(ESP32)
   _maxBufferSize = I2C_BUFFER_LENGTH;
-#elif defined(TwoWireKinetis_h) || defined(TwoWireIMXRT_h) //Teensy 3.x || 4.x
+#elif defined(TwoWireKinetis_h) || defined(TwoWireIMXRT_h) // Teensy 3.x || 4.x
   _maxBufferSize = BUFFER_LENGTH;
 #else
   _maxBufferSize = 32;
